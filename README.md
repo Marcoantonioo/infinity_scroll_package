@@ -1,13 +1,12 @@
 ## Infinity Scroll
 
-This Flutter plugin provides a Infinite Scroll. Please check the exemple to learn how to use this widget.
+This Flutter plugin provides a Infinite Scroll. Please check the [Exemple](https://github.com/Marcoantonioo/infinity_scroll_package/tree/main/exemple/exemple_infinity_scroll) to learn how to use this widget.
 
-![](https://https://github.com/Marcoantonioo/infinity_scroll_package/exemple.gif)
+![](https://github.com/Marcoantonioo/infinity_scroll_package/blob/main/exemple.gif)
 
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+### Examples
+[Example usage](https://github.com/Marcoantonioo/infinity_scroll_package/tree/main/exemple/exemple_infinity_scroll)
 
 ## Getting started
 
@@ -22,9 +21,3 @@ to `/example` folder.
 ```dart
 const like = 'sample';
 ```
-
-## Additional information
-
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
