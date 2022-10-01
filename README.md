@@ -2,6 +2,9 @@
 
 This Flutter plugin provides a Infinite Scroll. Please check the exemple to learn how to use this widget.
 
+![](https://https://github.com/Marcoantonioo/infinity_scroll_package/exemple.gif)
+
+
 ## Features
 
 TODO: List what your package can do. Maybe include images, gifs, or videos.
