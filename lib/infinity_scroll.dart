@@ -9,12 +9,14 @@ class InfinityScrollWidget<T> extends StatefulWidget {
   final Widget Function(BuildContext context, T entry, int index) delegate;
   final OnLoadMoreList onLoadMore;
   final OnRefreshList? onRefresh;
-  final bool reachMax;
-  final bool isLoading;
   final Widget? customLoader;
   final Widget? customLoaderMore;
   final Widget? customEmptyList;
   final Widget? customReachMax;
+  final bool reachMax;
+  final bool isLoading;
+  final bool shrinkWrap;
+  final ScrollPhysics? physics;
 
   const InfinityScrollWidget({
     Key? key,
@@ -28,6 +30,8 @@ class InfinityScrollWidget<T> extends StatefulWidget {
     this.customLoaderMore,
     this.customEmptyList,
     this.customReachMax,
+    this.shrinkWrap = false,
+    this.physics,
   }) : super(key: key);
 
   @override
@@ -89,8 +93,9 @@ class _InfinityScrollWidgetState<T> extends State<InfinityScrollWidget<T>> {
 
   Widget _buildList() {
     return ListView.builder(
+      shrinkWrap: widget.shrinkWrap,
       padding: const EdgeInsets.all(10.0),
-      physics: const BouncingScrollPhysics(
+      physics: widget.physics ?? const BouncingScrollPhysics(
         parent: AlwaysScrollableScrollPhysics(),
       ),
       controller: _scrollController,
