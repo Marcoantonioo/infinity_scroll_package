@@ -1,18 +1,18 @@
 import 'package:get/get.dart';
-import 'package:infinity_scroll/event/infinity_scroll_event.dart';
+import 'package:infinity_scroll/event/infinite_scroll_event.dart';
 
-class InfinityScrollLogic<T> extends GetxController {
-  late Rx<InfinityScrollEvent?> dispatchEvent;
+class InfiniteScrollLogic<T> extends GetxController {
+  late Rx<InfiniteScrollEvent?> dispatchEvent;
   late RxList<T> list;
 
-  InfinityScrollLogic() {
+  InfiniteScrollLogic() {
     _initValues();
 
     /// listen to the events
     dispatchEvent.listen(_handleEvents);
   }
 
-  void _handleEvents(InfinityScrollEvent? event) {
+  void _handleEvents(InfiniteScrollEvent? event) {
     switch (event.runtimeType) {
       case LoadMore:
         _loadMore((event as LoadMore).action);
@@ -33,7 +33,7 @@ class InfinityScrollLogic<T> extends GetxController {
   }
 
   void _initValues() {
-    dispatchEvent = (null as InfinityScrollEvent?).obs;
+    dispatchEvent = (null as InfiniteScrollEvent?).obs;
     list = RxList.empty();
   }
 

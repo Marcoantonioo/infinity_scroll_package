@@ -1,10 +1,8 @@
-library infinity_scroll;
-
 import 'package:flutter/material.dart';
-import 'package:infinity_scroll/event/infinity_scroll_event.dart';
-import 'package:infinity_scroll/logic/infinity_scroll_logic.dart';
+import 'package:infinity_scroll/event/infinite_scroll_event.dart';
+import 'package:infinity_scroll/logic/infinite_scroll_logic.dart';
 
-class InfinityScrollWidget<T> extends StatefulWidget {
+class InfiniteScrollWidget<T> extends StatefulWidget {
   final List<T> list;
   final Widget Function(BuildContext context, T entry, int index) delegate;
   final OnLoadMoreList onLoadMore;
@@ -18,7 +16,7 @@ class InfinityScrollWidget<T> extends StatefulWidget {
   final bool shrinkWrap;
   final ScrollPhysics? physics;
 
-  const InfinityScrollWidget({
+  const InfiniteScrollWidget({
     Key? key,
     required this.list,
     required this.delegate,
@@ -35,17 +33,17 @@ class InfinityScrollWidget<T> extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<InfinityScrollWidget<T>> createState() =>
-      _InfinityScrollWidgetState<T>();
+  State<InfiniteScrollWidget<T>> createState() =>
+      _InfiniteScrollWidgetState<T>();
 }
 
-class _InfinityScrollWidgetState<T> extends State<InfinityScrollWidget<T>> {
+class _InfiniteScrollWidgetState<T> extends State<InfiniteScrollWidget<T>> {
   late ScrollController _scrollController;
-  late InfinityScrollLogic _logic;
+  late InfiniteScrollLogic _logic;
 
   @override
   void initState() {
-    _logic = InfinityScrollLogic<T>();
+    _logic = InfiniteScrollLogic<T>();
     _scrollController = ScrollController();
     _logic.list(widget.list);
     _initListener();
@@ -95,9 +93,10 @@ class _InfinityScrollWidgetState<T> extends State<InfinityScrollWidget<T>> {
     return ListView.builder(
       shrinkWrap: widget.shrinkWrap,
       padding: const EdgeInsets.all(10.0),
-      physics: widget.physics ?? const BouncingScrollPhysics(
-        parent: AlwaysScrollableScrollPhysics(),
-      ),
+      physics: widget.physics ??
+          const BouncingScrollPhysics(
+            parent: AlwaysScrollableScrollPhysics(),
+          ),
       controller: _scrollController,
       itemCount: widget.list.length + 1,
       itemBuilder: (context, index) {

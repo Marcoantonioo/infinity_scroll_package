@@ -1,7 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
-import 'package:infinity_scroll/infinity_scroll.dart';
+import 'package:infinity_scroll/widget/infinite_scroll_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -85,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         title: Text(widget.title),
       ),
-      body: InfinityScrollWidget<MyEntity>(
+      body: InfiniteScrollWidget<MyEntity>(
         list: list,
         delegate: (context, item, index) => Padding(
           padding: const EdgeInsets.all(16.0),
